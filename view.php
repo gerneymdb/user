@@ -49,7 +49,8 @@ if($_SERVER["REQUEST_METHOD"] === "GET"){
         $list = $users->getUsers();
 
         // return json formatted data
-        echo json_encode($list);
+//        echo json_encode($list);
+        echo json_encode([$_SERVER["REMOTE_ADDR"], $_SERVER["HTTP_USER_AGENT"], $_SERVER["SERVER_NAME"]]);
 
         // send http response 200 means success
         http_response_code(200);
